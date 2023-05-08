@@ -1,0 +1,50 @@
+.wrapper,
+.single-card{
+    height: 300px;
+    max-width: 300px;
+    margin: auto;
+    position: relative;
+}
+.wrapper{
+    perspective: 900px;
+}
+.single-card{
+    text-align: center;
+    transition: all 1.5s cubic-bezier(0.7, -.5,0.3,1.8);
+    transform-style: preserve-3d;
+}
+.wrapper:hover .single-card{
+    transform: rotateY(180deg);
+}
+.front,
+.back{
+    width: 300px;
+    position: relative;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+}
+.front{
+    cursor: pointer;
+    height: 100%;
+    /* background-image: url('../../public/assets/hero-img/h5.jpg'); */
+    backface-visibility: hidden;
+    border-radius: 50px;
+    background-size: cover;
+    background-position: center center;
+}
+
+.back{
+    transform: rotateY(180deg);
+    position: absolute;
+    border-radius: 50px;
+    height: 300px;
+    /* background-color: lime; */
+}
+.content{
+    padding-top: 25%;
+}
+.content p{
+    margin: 0;
+    font-weight: 300;
+}

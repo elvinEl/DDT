@@ -1,0 +1,12 @@
+.menu {
+  /* position: relative; */
+}
+.menu .divider{
+  height: 5px;
+  background-color: cadetblue;
+  position: absolute;
+  bottom: 0;
+  left: var(--left);
+  width: var(--width);
+  transition: 300ms all;
+}
