@@ -13,8 +13,8 @@ function Video() {
           loop={`${true}`}
           src={`${"../../assets/video/video.mp4"}`}
         />
-        <div className="position_transform">
-          <p >
+        <div className="position_transform max-md:text-[16px] max-lg:w-[80%]">
+          <p>
             İnanırıq ki, texnologiyanın gücü biznes performansını artırmaq üçün
             saysız-hesabsız imkanlar təqdim edir
           </p>

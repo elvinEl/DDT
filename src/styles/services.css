@@ -1,8 +1,7 @@
 .wrapper,
 .single-card{
     height: 300px;
-    max-width: 300px;
-    margin: auto;
+    max-width: 100%;
     position: relative;
 }
 .wrapper{
@@ -18,7 +17,8 @@
 }
 .front,
 .back{
-    width: 300px;
+    width: 100%;
+    width: 100%;
     position: relative;
     top: 0;
     left: 0;
@@ -27,6 +27,7 @@
 .front{
     cursor: pointer;
     height: 100%;
+    width: 100%;
     /* background-image: url('../../public/assets/hero-img/h5.jpg'); */
     backface-visibility: hidden;
     border-radius: 50px;
@@ -38,7 +39,8 @@
     transform: rotateY(180deg);
     position: absolute;
     border-radius: 50px;
-    height: 300px;
+    height:100%;
+    width: 100%;
     /* background-color: lime; */
 }
 .content{

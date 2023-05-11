@@ -8,9 +8,9 @@ function AbautFeature() {
     setFeatures(featureData);
   });
   return (
-    <div className="flex justify-between mt-12">
+    <div className="flex justify-between mt-12 max-lg:flex-col overflow-x-hidden">
       <div>
-        <p data-aos="fade-right" className="text-[2.5rem]  font-bold text-[#0b163f]">
+        <p data-aos="fade-up" className="text-[2.5rem]  font-bold text-[#0b163f]">
           Bizim xüsusiyyətlərimiz
         </p>
         <div>
@@ -20,8 +20,8 @@ function AbautFeature() {
         </div>
       </div>
 
-      <div className="w-[50%]">
-        <img className="w-full h-[400px]" src="./assets/about/person.svg" alt="" />
+      <div className="max-w-full max-lg:max-w-[50%] mx-auto max-md:max-w-full">
+        <img className="w-full h-[400px] max-lg:h-full" src="./assets/about/person.svg" alt="" />
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
 .menu {
-  /* position: relative; */
+  position: relative;
 }
 .menu .divider{
   height: 5px;
@@ -9,4 +9,19 @@
   left: var(--left);
   width: var(--width);
   transition: 300ms all;
+}
+.navbar1 {
+  z-index: 99px;
+  width: 100%;
+  /* background-color: rgba(119, 119, 119, 0.5); */
+  top: 0;
+  transition: 500ms ease-in-out;
+}
+.navbar-active {
+  background-color: rgba(39, 39, 39, 0.8);
+  padding: 5px 0;
+  transition: 500ms ease-in-out;
+}
+.navbar-active a {
+  color: white;
 }

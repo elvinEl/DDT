@@ -10,7 +10,7 @@ function PortfolioItem({ portItem }) {
 <div className="info">
 <p>{portItem.title}</p>
 <p>{portItem.description}</p>
-<a className="btn rounded" href="#">Ətraflı</a>
+<a className="btn rounded" href="#">Veb Sayta Keçid</a>
 </div>
 </div>
     </div>

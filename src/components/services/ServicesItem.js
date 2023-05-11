@@ -11,7 +11,7 @@ function ServicesItem({ service }) {
           <img className=" h-[100px] w-full" src={service.img} alt="" /> 
          </div>
           <div >
-            <p className="text-[24px] font-normal leading-7">{service.titleFront}</p>
+            <p className="text-[24px]  font-normal leading-7">{service.titleFront}</p>
           </div>
           <div className="mt-1">
             <p className="text-[15px] font-normal">{service.descriptionFront}</p>

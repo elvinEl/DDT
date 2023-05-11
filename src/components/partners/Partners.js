@@ -10,7 +10,7 @@ function Partners() {
 
   return (
     <div data-aos="fade-up" data-aos-duration="2000">
-      <span className="flex justify-center items-center text-[35px] font-bold text-[#283C83] max-md:text-[30px]">
+      <span className="flex justify-center items-center mt-8 text-[35px] font-bold text-[#283C83] max-md:text-[30px]">
         Bizim Müştərilərimiz
       </span>
       {

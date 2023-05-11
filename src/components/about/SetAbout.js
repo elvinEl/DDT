@@ -10,7 +10,7 @@ function SetAbout() {
   return (
     <>
       <div className="mb-8">
-        <p data-aos="fade-right" className="text-[2.5rem]  font-bold text-[#0b163f]">
+        <p data-aos="fade-up"  className="text-[2.5rem]  font-bold text-[#0b163f]">
           WWW Technology
         </p>
         {abouts.map((about) => (
