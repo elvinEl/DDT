@@ -5,6 +5,9 @@ import "../../styles/portfolio.css";
 import { NavLink } from "react-router-dom";
 
 function PortfolioComponent() {
+
+  
+
   const [portfolio, setPortfolio] = useState([]);
   useEffect(() => {
     setPortfolio(PortfolioData);

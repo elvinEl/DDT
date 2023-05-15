@@ -13,9 +13,7 @@ nav a {
 	text-decoration: none;
 }
 
-nav a:hover {
-	color: var(--secondaryColor);
-}
+
 
 .container .nav-btn {
 	padding: 2px;
@@ -35,7 +33,7 @@ nav {
 	align-items: center;
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 768px) {
 	.container .nav-btn {
 		visibility: visible;
 		opacity: 1;

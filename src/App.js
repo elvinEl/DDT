@@ -5,14 +5,14 @@ import {
   createRoutesFromElements,
   RouterProvider,
 } from "react-router-dom";
-import RootLayout from "./layouts/RootLayout";
-
 // PAGES
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Connect from "./pages/Connect";
 import Portfolio from "./pages/Portfolio";
 // LAYOUTS
+import RootLayout from "./layouts/RootLayout";
+
 
 const router = createBrowserRouter(
   createRoutesFromElements(
