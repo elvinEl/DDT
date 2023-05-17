@@ -8,7 +8,7 @@ function About() {
     <div className="mb-12 mt-24 overflow-x-hidden">
       <div className="bg-image ">
         <div className="max-w-[90%] pb-12 mx-auto grid grid-cols-2 pt-8 max-lg:flex max-lg:justify-center max-lg:items-center max-lg:flex-col">
-          <div className="max-w-[600px]  col-span-1 max-lg:w-full max-lg:place-content-center ">
+          <div className="  col-span-1 max-lg:w-full max-lg:place-content-center ">
             <p data-aos="fade-up"  className="text-[3rem] font-extrabold mb-2 leading-tight max-lg:text-[2rem]">
               WWW Technology ilə Biznesinizi və Müştəri Məmnuniyyətinizi Artırın
             </p>

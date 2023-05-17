@@ -17,6 +17,7 @@ async function fetchServices() {
     fetchServices();
   }, []);
   return (
+  
     <div>
         <Outlet context={[serviceData]}/>
     </div>
