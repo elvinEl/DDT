@@ -25,7 +25,7 @@ function Footer() {
               </a>
             </div>
 
-            <div className="pl-24 pt-12 pb-16  grid grid-cols-3 max-lg:pl-0 max-w-[95%] mx-auto max-lg:gap-4 max-lg:grid-cols-2 max-md:grid-cols-1">
+            <div className="pl-24 pt-12 pb-[2rem]  grid grid-cols-3 max-lg:pl-0 max-w-[95%] mx-auto max-lg:gap-4 max-lg:grid-cols-2 max-md:grid-cols-1">
               <div className="col-span-1">
                 <p className="text-[18px] font-bold text-start  ">Əlaqə</p>
                 <span className="flex items-center gap-1 pt-3 text-[18px]">

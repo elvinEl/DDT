@@ -38,7 +38,7 @@ function Services() {
           <Link to={`services/${services[key].slug}`}>
             <div className="wrapper">
               <div className="single-card">
-                <div className="front flex  justify-center items-center flex-col text-start px-7 bg-gradient-to-br from-[#e9ffd4] via-[#f5bfd7] to-[#4dc9e6]">
+                <div className="front flex   flex-col text-start px-7 pt-[7rem] bg-gradient-to-br from-[#e9ffd4] via-[#f5bfd7] to-[#4dc9e6]">
                   <div className="absolute top-[-25px] right-[25px]">
                     <img
                       className=" h-[100px] w-full"

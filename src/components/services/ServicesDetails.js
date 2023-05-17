@@ -49,7 +49,7 @@ function ServicesDetails() {
           </p>
         </div>
         <div className="max-w-[90%] mx-auto rounded-[20px] bg-[#f7f7f5] my-8 p-8">
-          <p className="text-[18px]"  dangerouslySetInnerHTML={{__html:serviceDetails.description}}>
+          <p className="text-[18px]"  dangerouslySetInnerHTML={{__html:serviceDetails.detail_description}}>
            
           </p>
          

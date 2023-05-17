@@ -129,3 +129,6 @@
     background-color: rgba(53, 113, 255, 1) !important;
     transition: 500ms;
   }
+  .scroll-to-top{
+    transition: 500ms;
+  }
