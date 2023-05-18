@@ -16,11 +16,8 @@ function ServicesDetails() {
       serviceData.find(function (obj) {
         return obj.slug == slug;
       });
-
-    console.log(dataS, "obj");
-
+      
     async function fetchServices() {
-      console.log(slug, "slug");
       const language = i18n.language;
       const response = await axios.get(
         `http://10.138.1.35:8000/api/v1/services/${slug}`,
@@ -34,9 +31,6 @@ function ServicesDetails() {
       setServiceDetails(dataS);
     }
 
-    console.log(serviceData);
-    console.log(serviceDetails);
-
     fetchServices();
   }, [i18n.language, slug, serviceData]);
 
@@ -49,10 +43,12 @@ function ServicesDetails() {
           </p>
         </div>
         <div className="max-w-[90%] mx-auto rounded-[20px] bg-[#f7f7f5] my-8 p-8">
-          <p className="text-[18px]"  dangerouslySetInnerHTML={{__html:serviceDetails.detail_description}}>
-           
-          </p>
-         
+          <p
+            className="text-[18px]"
+            dangerouslySetInnerHTML={{
+              __html: serviceDetails.detail_description,
+            }}
+          ></p>
         </div>
       </div>
     </div>

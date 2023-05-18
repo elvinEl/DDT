@@ -1,17 +1,13 @@
 import React, { useEffect, useState } from "react";
-import ServicesData from "../../data/services.json";
 import ServicesItem from "./ServicesItem";
 import axios from "axios";
 import { getI18n, useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import {useParams} from 'react-router-dom'
+
 
 function Services() {
-
   const [services, setServices] = useState([]);
-
   const { t, i18n } = useTranslation();
-
 
   useEffect(() => {
     async function fetchServices() {

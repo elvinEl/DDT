@@ -9,15 +9,13 @@ async function fetchServices() {
   const response = await axios.get(
     "http://10.138.1.35:8000/api/v1/services"
   );
-  console.log(response.data)
   setServiceData(response.data);
-  
 }
-  useEffect(() => {
+
+useEffect(() => {
     fetchServices();
   }, []);
   return (
-  
     <div>
         <Outlet context={[serviceData]}/>
     </div>

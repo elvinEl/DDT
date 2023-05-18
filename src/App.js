@@ -28,7 +28,7 @@ const router = createBrowserRouter(
       </Route>
       <Route path="portfolio" element={<PortfolioLayout />}>
         <Route index element={<Portfolio />} />
-        <Route path=":id" element={<PortfolioDetails />} />
+        <Route path=":slug" element={<PortfolioDetails />} />
       </Route>
       <Route path="connect" element={<Connect />} />
     </Route>

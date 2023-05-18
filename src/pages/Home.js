@@ -42,7 +42,7 @@ function Home() {
         </span>
         <div className="wrapper_p max-md:pt-0 max-md:grid-cols-1">
           {Object.keys(slice).map((key) => (
-            <Link to={`portfolio/${homePortfolio[key].id.toString()}`}>
+            <Link to={`portfolio/${homePortfolio[key].slug}`}>
               <div className="card">
                 <img src={homePortfolio[key].image} alt="" />
                 <div className="info">

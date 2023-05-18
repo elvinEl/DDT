@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react";
-import PortfolioData from "../../data/portfolio.json";
-import PortfolioItem from "./PortfolioItem";
 import "../../styles/portfolio.css";
 import { Link, NavLink } from "react-router-dom";
 import axios from "axios";
@@ -38,7 +36,7 @@ function PortfolioComponent() {
       </span>
       <div className="wrapper_p max-md:pt-0 max-md:grid-cols-1">
         {Object.keys(slice).map((key) => (
-          <Link to={`portfolio/${portfolio[key].id}`}>
+          <Link to={`${portfolio[key].slug}`}>
             <div className="card">
               <img src={portfolio[key].image} alt="" />
               <div className="info">
