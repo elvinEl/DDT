@@ -26,7 +26,6 @@ function HeroSection() {
           <div className="absolute top-0 left-0 w-full h-full bg-[#00000080]"></div>
           <p className="absolute top-1/2 left-[25%] -translate-x-1/2 -translate-y-1/2  font-extrabold text-white text-[45px] max-md:text-[15px] max-md:hidden">Sizin üçün effektiv həllər!</p>
         </div>
-
       </Slider> */}
       <div className="pt-8">
         <SliderHero />

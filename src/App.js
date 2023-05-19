@@ -12,7 +12,6 @@ import Connect from "./pages/Connect";
 import Portfolio from "./pages/Portfolio";
 import PortfolioDetails from "./components/portfolio/PortfolioDetails";
 import ServicesDetails from "./components/services/ServicesDetails";
-
 // LAYOUTS
 import RootLayout from "./layouts/RootLayout";
 import PortfolioLayout from "./layouts/PortfolioLayout";

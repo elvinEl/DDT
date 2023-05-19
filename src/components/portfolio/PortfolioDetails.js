@@ -14,7 +14,7 @@ function PortfolioDetails() {
   });
 
   useEffect(() => {
-    let dataElvin =
+    let dataPort =
       portfolioData &&
       portfolioData.find(function (item) {
         return item.slug == slug;
@@ -27,11 +27,11 @@ function PortfolioDetails() {
         {
           headers: {
             language: language,
-            general_key: dataElvin.general_key,
+            general_key: dataPort.general_key,
           },
         }
       );
-      setPortfolioDetails(dataElvin);
+      setPortfolioDetails(dataPort);
     }
     fetchPortfolio();
   }, [i18n.language, slug, portfolioData]);

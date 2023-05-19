@@ -1,7 +1,7 @@
 .menu {
   position: relative;
 }
-.menu .divider{
+.menu .divider {
   height: 5px;
   background-color: cadetblue;
   position: absolute;
@@ -25,3 +25,5 @@
 .navbar-active a {
   color: white;
 }
+
+

@@ -6,6 +6,7 @@ import Form from "../components/connect/Form";
 import axios from "axios";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
+import {Helmet} from 'react-helmet'
 
 function Connect() {
   const { t, i18n } = useTranslation();
@@ -27,6 +28,9 @@ function Connect() {
 
   return (
     <>
+      <Helmet>
+        <title>Əlaqə</title>
+      </Helmet>
       <div data-aos="fade-up" data-aos-duration="2000" className=" mt-24">
         <p className="flex justify-center text-[24px] font-bold">Əlaqə</p>
 

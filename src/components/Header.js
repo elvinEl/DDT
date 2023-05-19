@@ -3,8 +3,11 @@ import { NavLink } from "react-router-dom";
 import "../styles/header.css";
 import "../styles/navbar.css";
 import { FaBars, FaTimes } from "react-icons/fa";
+import {getI18n,  useTranslation } from "react-i18next";
 
 function Header() {
+
+
   const navRef = useRef();
   const showNavbar = () => {
     navRef.current.classList.toggle("responsive");
@@ -22,12 +25,17 @@ function Header() {
   };
   window.addEventListener("scroll", changeBackground);
   //
+  const { i18n } = useTranslation();
+  const changeSelect = (option) => {
+    i18n.changeLanguage(option.target.value);
+  };
 
   const [position, setPosition] = useState({});
   const clickHandle = (e) => {
     const { top, width, height } = e.target.getBoundingClientRect();
     const left = e.target.offsetLeft;
-    showNavbar(!showNavbar)
+    localStorage.setItem("item", JSON.stringify({ top, width, height, left }));
+    showNavbar(!showNavbar);
     setPosition({
       left,
       top,
@@ -38,14 +46,25 @@ function Header() {
   const ref = useRef();
   useEffect(() => {
     const el = ref.current.querySelector(".active");
-    const { top, width, height } = el.getBoundingClientRect();
+
     // const left = el.offsetLeft;
-    setPosition({
-      // left,
-      top,
-      width,
-      height,
-    });
+    const newArr = JSON.parse(localStorage.getItem("item"));
+
+    if (newArr !== null) {
+      setPosition({
+        left: newArr.left,
+        top: newArr.top,
+        width: newArr.width,
+        height: newArr.height,
+      });
+    } else {
+      const { top, width, height } = el.getBoundingClientRect();
+      setPosition({
+        top,
+        width,
+        height,
+      });
+    }
   }, []);
   return (
     <header ref={ref} className="text-black  fixed top-0 z-50 w-full menu">
@@ -72,7 +91,7 @@ function Header() {
 
             <NavLink
               onClick={clickHandle}
-              className="active text-base font-medium"
+              className="text-base font-medium"
               to="/"
             >
               Ana səhifə
@@ -101,6 +120,15 @@ function Header() {
             <button className="nav-btn nav-close-btn" onClick={showNavbar}>
               <FaTimes />
             </button>
+
+            <select
+              value={i18n.language}
+              className="select-option"
+              onChange={changeSelect}
+            >
+              <option value="az">Az</option>
+              <option value="ru">En</option>
+            </select>
           </nav>
           <button className="nav-btn" onClick={showNavbar}>
             <FaBars />

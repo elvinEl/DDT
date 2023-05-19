@@ -1,4 +1,10 @@
 
+:root {
+	--primaryColor: rgb(154, 65, 222);
+	--secondaryColor: black;
+	--textColor: white;
+}
+
 .container {
 	display: flex;
 	align-items: center;
