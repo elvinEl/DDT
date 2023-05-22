@@ -7,18 +7,23 @@ import Partners from "../components/partners/Partners";
 import axios from "axios";
 import { NavLink, Link } from "react-router-dom";
 import {Helmet} from 'react-helmet'
+
 function Home() {
 
   const { t, i18n } = useTranslation();
   const [homePortfolio, setHomePortfolio] = useState([]);
   const [sliceElement] = useState(4);
   const slice = homePortfolio.slice(0, sliceElement);
+  
+// ENV ISTIFADESI
+const baseUrl = `${process.env.REACT_APP_BASE_URL}/${process.env.REACT_APP_API_KEY}`
 
-  useEffect(() => {
+useEffect(() => {
     async function fetchPortfolio() {
       const language = i18n.language;
       const response = await axios.get(
-        "http://10.138.1.35:8000/api/v1/portfolios",
+        // "http://10.138.1.35:8000/api/v1/portfolios",
+         baseUrl,
         {
           headers: { "Language": language },
         }

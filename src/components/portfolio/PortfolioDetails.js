@@ -9,9 +9,6 @@ function PortfolioDetails() {
   const [portfolioData] = useOutletContext();
   const { slug } = useParams();
 
-  useEffect(() => {
-    console.log(portfolioData, "Elvin");
-  });
 
   useEffect(() => {
     let dataPort =
