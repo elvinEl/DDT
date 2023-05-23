@@ -7,5 +7,6 @@ export default configureStore({
   reducer: {
     service: serviceReducer,
     portfolio: portfolioReducer,
+  
   },
 });

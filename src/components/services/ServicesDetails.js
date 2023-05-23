@@ -2,22 +2,22 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
-import { useOutletContext } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 function ServicesDetails() {
   const [serviceDetails, setServiceDetails] = useState([]);
   const { i18n } = useTranslation();
-  const [serviceData] = useOutletContext();
   const { slug } = useParams();
+
+  const serviceR= useSelector(state => state.service.serviceData);
 
   useEffect(() => {
     let dataS =
-      serviceData &&
-      serviceData.find(function (obj) {
+    serviceR &&
+    serviceR.find(function (obj) {
         return obj.slug == slug;
       });
-      
-    async function fetchServices() {
+    async function fetchServiceBySlug() {
       const language = i18n.language;
       const response = await axios.get(
         `http://10.138.1.35:8000/api/v1/services/${slug}`,
@@ -28,12 +28,12 @@ function ServicesDetails() {
           },
         }
       );
-      console.log(response.data);
       setServiceDetails(dataS);
     }
 
-    fetchServices();
-  }, [i18n.language, slug, serviceData]);
+    fetchServiceBySlug();
+
+  }, [i18n.language, slug, serviceR]);
 
   return (
     <div>
