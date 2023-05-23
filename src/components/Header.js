@@ -1,13 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useRoutes } from "react-router-dom";
 import "../styles/header.css";
 import "../styles/navbar.css";
 import { FaBars, FaTimes } from "react-icons/fa";
-import {getI18n,  useTranslation } from "react-i18next";
+import { getI18n, useTranslation } from "react-i18next";
+import { useParams } from "react-router-dom";
 
 function Header() {
-
-
+  const params = useParams();
   const navRef = useRef();
   const showNavbar = () => {
     navRef.current.classList.toggle("responsive");
@@ -28,6 +28,9 @@ function Header() {
   const { i18n } = useTranslation();
   const changeSelect = (option) => {
     i18n.changeLanguage(option.target.value);
+    // lang_name = option.target.value
+    console.log(params);
+    params.slug = "preparation-of-web-pages"
   };
 
   const [position, setPosition] = useState({});
@@ -127,7 +130,7 @@ function Header() {
               onChange={changeSelect}
             >
               <option value="az">Az</option>
-              <option value="ru">En</option>
+              <option value="en">En</option>
             </select>
           </nav>
           <button className="nav-btn" onClick={showNavbar}>

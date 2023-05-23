@@ -16,16 +16,16 @@ function Home() {
   const slice = homePortfolio.slice(0, sliceElement);
   
 // ENV ISTIFADESI
-const baseUrl = `${process.env.REACT_APP_BASE_URL}/${process.env.REACT_APP_API_KEY}`
+const baseUrl = process.env.REACT_APP_BASE_URL
+//
 
 useEffect(() => {
     async function fetchPortfolio() {
       const language = i18n.language;
       const response = await axios.get(
-        // "http://10.138.1.35:8000/api/v1/portfolios",
-         baseUrl,
+        `${baseUrl}/portfolios`,
         {
-          headers: { "Language": language },
+          headers: { "language": language },
         }
       );
       setHomePortfolio(response.data);

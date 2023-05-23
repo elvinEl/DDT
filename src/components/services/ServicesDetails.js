@@ -23,11 +23,12 @@ function ServicesDetails() {
         `http://10.138.1.35:8000/api/v1/services/${slug}`,
         {
           headers: {
-            language: language,
+            "language": language,
             general_key: dataS.general_key,
           },
         }
       );
+      console.log(response.data);
       setServiceDetails(dataS);
     }
 

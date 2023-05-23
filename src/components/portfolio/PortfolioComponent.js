@@ -1,30 +1,23 @@
 import React, { useEffect, useState } from "react";
 import "../../styles/portfolio.css";
 import { Link, NavLink } from "react-router-dom";
-import axios from "axios";
 import { useTranslation } from "react-i18next";
+import { fetchPortfolio } from "../../store/portfolio/portfolioActions";
+import { useDispatch, useSelector } from "react-redux";
 
 function PortfolioComponent() {
   const { t, i18n } = useTranslation();
-  const [portfolio, setPortfolio] = useState([]);
+  const dispatch = useDispatch();
+  const portfolioRedux = useSelector((state) => state.portfolio.portfolioData);
 
   useEffect(() => {
-    async function fetchPortfolio() {
-      const language = i18n.language;
-      const response = await axios.get(
-        "http://10.138.1.35:8000/api/v1/portfolios",
-        {
-          headers: { "Accept-Language": language },
-        }
-      );
-      setPortfolio(response.data);
-    }
-    fetchPortfolio();
-  }, [i18n.language]);
+    dispatch(fetchPortfolio());
+  }, [dispatch]);
+
 
   // PAGINATION
   const [noOfElement, setNoOfElement] = useState(2);
-  const slice = portfolio.slice(0, noOfElement);
+  const slice = portfolioRedux.slice(0, noOfElement);
   const loadMore = () => {
     setNoOfElement(noOfElement + noOfElement);
   };
@@ -36,12 +29,12 @@ function PortfolioComponent() {
       </span>
       <div className="wrapper_p max-md:pt-0 max-md:grid-cols-1">
         {Object.keys(slice).map((key) => (
-          <Link to={`${portfolio[key].slug}`}>
+          <Link to={`${portfolioRedux[key].slug}`}>
             <div className="card">
-              <img src={portfolio[key].image} alt="" />
+              <img src={portfolioRedux[key].image} alt="" />
               <div className="info">
-                <p>{portfolio[key].title}</p>
-                <p>{portfolio[key].description}</p>
+                <p>{portfolioRedux[key].title}</p>
+                <p>{portfolioRedux[key].description}</p>
                 <a className="btn rounded" href="#">
                   Veb Sayta Keçid
                 </a>

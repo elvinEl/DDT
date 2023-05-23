@@ -9,7 +9,6 @@ function PortfolioDetails() {
   const [portfolioData] = useOutletContext();
   const { slug } = useParams();
 
-
   useEffect(() => {
     let dataPort =
       portfolioData &&
