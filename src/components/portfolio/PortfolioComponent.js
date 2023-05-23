@@ -7,13 +7,14 @@ import { useDispatch, useSelector } from "react-redux";
 
 function PortfolioComponent() {
   const { t, i18n } = useTranslation();
+
+  // Redux
   const dispatch = useDispatch();
   const portfolioRedux = useSelector((state) => state.portfolio.portfolioData);
 
   useEffect(() => {
     dispatch(fetchPortfolio());
   }, [dispatch]);
-
 
   // PAGINATION
   const [noOfElement, setNoOfElement] = useState(2);

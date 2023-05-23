@@ -8,31 +8,26 @@ function ServicesDetails() {
   const [serviceDetails, setServiceDetails] = useState([]);
   const { i18n } = useTranslation();
   const { slug } = useParams();
-
-  const serviceR= useSelector(state => state.service.serviceData);
+  const baseUrl = process.env.REACT_APP_BASE_URL;
+  const serviceR = useSelector((state) => state.service.serviceData);
 
   useEffect(() => {
     let dataS =
-    serviceR &&
-    serviceR.find(function (obj) {
+      serviceR &&
+      serviceR.find(function (obj) {
         return obj.slug == slug;
       });
     async function fetchServiceBySlug() {
       const language = i18n.language;
-      const response = await axios.get(
-        `http://10.138.1.35:8000/api/v1/services/${slug}`,
-        {
-          headers: {
-            "language": language,
-            general_key: dataS.general_key,
-          },
-        }
-      );
+      const response = await axios.get(`${baseUrl}/services/${slug}`, {
+        headers: {
+          language: language,
+          general_key: dataS.general_key,
+        },
+      });
       setServiceDetails(dataS);
     }
-
     fetchServiceBySlug();
-
   }, [i18n.language, slug, serviceR]);
 
   return (

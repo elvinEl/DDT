@@ -6,28 +6,24 @@ import HeroSection from "../components/HeroSection";
 import Partners from "../components/partners/Partners";
 import axios from "axios";
 import { NavLink, Link } from "react-router-dom";
-import {Helmet} from 'react-helmet'
+import { Helmet } from "react-helmet";
 
 function Home() {
-
   const { t, i18n } = useTranslation();
   const [homePortfolio, setHomePortfolio] = useState([]);
   const [sliceElement] = useState(4);
   const slice = homePortfolio.slice(0, sliceElement);
-  
-// ENV ISTIFADESI
-const baseUrl = process.env.REACT_APP_BASE_URL
-//
 
-useEffect(() => {
+  // ENV ISTIFADESI
+  const baseUrl = process.env.REACT_APP_BASE_URL;
+  //
+
+  useEffect(() => {
     async function fetchPortfolio() {
       const language = i18n.language;
-      const response = await axios.get(
-        `${baseUrl}/portfolios`,
-        {
-          headers: { "language": language },
-        }
-      );
+      const response = await axios.get(`${baseUrl}/portfolios`, {
+        headers: { language: language },
+      });
       setHomePortfolio(response.data);
     }
     fetchPortfolio();
@@ -53,7 +49,7 @@ useEffect(() => {
                 <div className="info">
                   <p>{homePortfolio[key].title}</p>
                   <p>{homePortfolio[key].description}</p>
-                  <a  className="btn rounded"  href={homePortfolio[key].url}>
+                  <a className="btn rounded" href={homePortfolio[key].url}>
                     Veb Sayta Keçid
                   </a>
                 </div>

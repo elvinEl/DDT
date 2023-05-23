@@ -1,25 +1,30 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useTranslation } from "react-i18next";
-import { useParams, useOutletContext } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 function PortfolioDetails() {
   const [portfolioDetails, setPortfolioDetails] = useState([]);
   const { i18n } = useTranslation();
-  const [portfolioData] = useOutletContext();
   const { slug } = useParams();
+  const baseUrl = process.env.REACT_APP_BASE_URL
+
+  const servicePortfolio = useSelector(
+    (state) => state.portfolio.portfolioData
+  );
 
   useEffect(() => {
     let dataPort =
-      portfolioData &&
-      portfolioData.find(function (item) {
+    servicePortfolio &&
+    servicePortfolio.find(function (item) {
         return item.slug == slug;
       });
 
-    async function fetchPortfolio() {
+    async function fetchPortfolioBySlug() {
       const language = i18n.language;
       const response = await axios.get(
-        `http://10.138.1.35:8000/api/v1/portfolios/${slug}`,
+        `${baseUrl}/portfolios/${slug}`,
         {
           headers: {
             language: language,
@@ -29,8 +34,8 @@ function PortfolioDetails() {
       );
       setPortfolioDetails(dataPort);
     }
-    fetchPortfolio();
-  }, [i18n.language, slug, portfolioData]);
+    fetchPortfolioBySlug();
+  }, [i18n.language, slug,servicePortfolio]);
 
   return (
     <div className="mt-24 mb-[1.1rem]">
