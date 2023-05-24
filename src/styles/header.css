@@ -27,7 +27,8 @@
 }
 
 .navbar-active .select-option{
-  color: white;
-  background-color:black;
+  background-color:transparent;
 }
-
+.select-option{
+  background-color: transparent;
+}

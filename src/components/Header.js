@@ -1,13 +1,21 @@
 import React, { useEffect, useRef, useState } from "react";
-import { NavLink, useRoutes } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "../styles/header.css";
 import "../styles/navbar.css";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { getI18n, useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 
 function Header() {
+  const dispatch = useDispatch();
   const params = useParams();
+  const navigate = useNavigate();
+  const serviceR = useSelector(
+    (state) => state.serviceDetail.serviceDataDetail
+  );
+  console.log(serviceR);
   const navRef = useRef();
   const showNavbar = () => {
     navRef.current.classList.toggle("responsive");
@@ -29,8 +37,10 @@ function Header() {
   const changeSelect = (option) => {
     i18n.changeLanguage(option.target.value);
     // lang_name = option.target.value
+    // params.slug = "preparation-of-web-pages";
+    const location = window.location.pathname.split("/")[1]
+    navigate(`/${location}/${option.target.value}`);
     console.log(params);
-    params.slug = "preparation-of-web-pages"
   };
 
   const [position, setPosition] = useState({});
@@ -129,8 +139,12 @@ function Header() {
               className="select-option"
               onChange={changeSelect}
             >
-              <option value="az">Az</option>
-              <option value="en">En</option>
+              {serviceR.multi_langs &&
+                serviceR.multi_langs.map((lang, index) => (
+                  <option value={lang.slug} key={index}>
+                    {lang.lang_name}
+                  </option>
+                ))}
             </select>
           </nav>
           <button className="nav-btn" onClick={showNavbar}>

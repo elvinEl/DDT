@@ -5,6 +5,7 @@ import {
   createRoutesFromElements,
   RouterProvider,
 } from "react-router-dom";
+
 // PAGES
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -35,6 +36,7 @@ const router = createBrowserRouter(
 );
 
 function App() {
+
   return (
     <>
       <RouterProvider router={router} />
