@@ -25,12 +25,17 @@ function ServicesDetails() {
 
   useEffect(() => {
     let dataS =
-      serviceR &&
-      serviceR.find(function (obj) {
-        return obj.slug == slug;
-      });
-
-    const language = i18n.language;
+     serviceR &&
+      serviceR.find( function (obj) {
+        return  obj.slug ==  slug;
+      });console.log(serviceR);
+      const language = i18n.language;
+const response = (serviceR,{
+  headers:{
+    language:language
+  }
+}) 
+console.log(response);
     dispatch(fetchServicesBySlug({ dataS, language, slug }));
   }, [serviceR]);
 

@@ -4,17 +4,17 @@ import { Link, NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { fetchPortfolio } from "../../store/portfolio/portfolioActions";
 import { useDispatch, useSelector } from "react-redux";
+import axios from "axios";
 
 function PortfolioComponent() {
   const { t, i18n } = useTranslation();
+  const baseUrl = process.env.REACT_APP_BASE_URL
 
   // Redux
   const dispatch = useDispatch();
   const portfolioRedux = useSelector((state) => state.portfolio.portfolioData);
 
-  useEffect(() => {
-    dispatch(fetchPortfolio());
-  }, [dispatch]);
+
 
   // PAGINATION
   const [noOfElement, setNoOfElement] = useState(2);

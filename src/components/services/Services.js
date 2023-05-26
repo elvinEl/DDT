@@ -4,9 +4,11 @@ import { getI18n, useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import {useDispatch,useSelector} from 'react-redux'
 import { fetchServices } from "../../store/services/serviceActions";
-
+import axios from "axios";
 function Services() {
   const { t, i18n } = useTranslation();
+  const baseUrl = process.env.REACT_APP_BASE_URL
+
 // Redux
   const dispatch = useDispatch();
   const serviceRedux = useSelector(state => state.service.serviceData);
@@ -29,6 +31,8 @@ function Services() {
   //   }
   //   fetchServices();
   // }, [i18n.language]);
+
+  
   return (
     <div>
       <span className="flex justify-center text-[35px] font-bold text-[#283C83] max-md:text-[30px]">

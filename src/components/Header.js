@@ -9,6 +9,8 @@ import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
 function Header() {
+  const baseUrl = process.env.REACT_APP_BASE_URL
+
   const dispatch = useDispatch();
   const params = useParams();
   const navigate = useNavigate();
@@ -36,12 +38,10 @@ function Header() {
   const { i18n } = useTranslation();
   const changeSelect = (option) => {
     i18n.changeLanguage(option.target.value);
-    // lang_name = option.target.value
-    // params.slug = "preparation-of-web-pages";
     const location = window.location.pathname.split("/")[1]
     navigate(`/${location}/${option.target.value}`);
-    console.log(params);
   };
+
 
   const [position, setPosition] = useState({});
   const clickHandle = (e) => {
@@ -142,7 +142,7 @@ function Header() {
               {serviceR.multi_langs &&
                 serviceR.multi_langs.map((lang, index) => (
                   <option value={lang.slug} key={index}>
-                    {lang.lang_name}
+                    {lang.language}
                   </option>
                 ))}
             </select>
