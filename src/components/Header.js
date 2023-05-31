@@ -81,7 +81,7 @@ function Header() {
             <NavLink
               onClick={clickHandle}
               className="border-b-[3px] border-transparent hover:border-b-[3px] hover:border-[#757575] px-[14px] py-[16px] text-center block active:border-b-[3px] focus:border-[#757575]"
-              to="/portfolio"
+              to="/portfolios"
             >
               Portfolio
             </NavLink>

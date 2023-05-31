@@ -13,6 +13,7 @@ function ServicesDetails() {
   const serviceReduxDetail = useSelector(
     (state) => state.serviceDetail.serviceDataDetail
   );
+  console.log(serviceReduxDetail);
 
   useEffect(() => {
     let dataS =
@@ -28,7 +29,6 @@ function ServicesDetails() {
           <p className="text-[42px] h-[7rem] font-medium flex justify-center items-center">
             {serviceReduxDetail.content && serviceReduxDetail.content.title}
           </p>
-          <p>{serviceR.title}</p>
         </div>
         <div className="max-w-[90%] mx-auto rounded-[20px] bg-[#f7f7f5] my-8 p-8">
           <p

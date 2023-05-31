@@ -48,7 +48,7 @@ function PortfolioComponent() {
 
       <div className="flex justify-center py-12">
         <NavLink
-          to="/portfolio"
+          to="/portfolios"
           className="text-black font-bold  bg-gradient-to-r from-[#87f4b5] via-[#ddb4f6] to-[#93cbf1] hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 shadow-lg  shadow-cyan-500/50 dark:shadow-lg dark:shadow-cyan-800/80  rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
           onClick={() => loadMore()}
         >

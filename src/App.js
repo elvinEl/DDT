@@ -26,7 +26,7 @@ const router = createBrowserRouter(
       <Route path="services" element={<ServicesLayout />}>
         <Route path=":general_key" element={<ServicesDetails />} />
       </Route>
-      <Route path="portfolio" element={<PortfolioLayout />}>
+      <Route path="portfolios" element={<PortfolioLayout />}>
         <Route index element={<Portfolio />} />
         <Route path=":general_key" element={<PortfolioDetails />} />
       </Route>

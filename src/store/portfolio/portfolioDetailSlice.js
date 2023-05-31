@@ -2,9 +2,9 @@ import { createSlice } from "@reduxjs/toolkit";
 import { fetchPortfolioById } from "./portfolioActions";
 
 export const portfolioDetailSlice = createSlice({
-  name: "serviceDetail",
+  name: "portfolioDetail",
   initialState: {
-    portfolioDatadetail: [],
+    portfolioDataDetail: [],
     isLoading: false,
     isSuccess: false,
     errorMessage: "",
@@ -17,7 +17,7 @@ export const portfolioDetailSlice = createSlice({
     [fetchPortfolioById.fulfilled]: (state, { payload }) => {
       state.isLoading = false;
       state.isSuccess = true;
-      state.portfolioDatadetail = payload;
+      state.portfolioDataDetail = payload;
     },
     [fetchPortfolioById.rejected]: (state, { payload }) => {
       state.isLoading = false;
