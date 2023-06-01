@@ -72,14 +72,10 @@ article h4 {
 }
 .title {
   text-transform: capitalize;
-  margin-bottom: 0.75rem;
   color: rgba(218, 218, 218, 1);
 }
 
-.title {
-  text-align: center;
-  margin-bottom: 2rem;
-}
+
 .title h2 {
   display: flex;
   align-items: center;
@@ -90,7 +86,7 @@ article h4 {
 .text {
   max-width: 35em;
   margin: 0 auto;
-  margin-top: 2rem;
+  margin-top: 1rem;
   line-height: 2;
   color: rgba(218, 218, 218, 1);
 }

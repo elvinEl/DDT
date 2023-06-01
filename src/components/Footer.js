@@ -27,46 +27,48 @@ function Footer() {
           >
             <div className="col-span-1">
               <div>
-                <p className="text-[22px] font-semibold">ŞİRKƏT</p>
+                <p className="text-[22px] font-semibold">{t("NAVİQASİYA")} </p>
               </div>
               <div className="text-[16px] font-normal leading-[31px] pt-4">
                 <div>
-                  <NavLink to="/">Ana Səhifə</NavLink>
+                  <NavLink to="/">{t("Ana səhifə")}</NavLink>
                 </div>
                 <div>
-                  <NavLink to="/about">Haqqımızda</NavLink>
+                  <NavLink to="/about">{t("Haqqımızda")}</NavLink>
                 </div>
                 <div>
-                  <NavLink to="/portfolio">Portfolio</NavLink>
+                  <NavLink to="/portfolios">{t("Portfolio")}</NavLink>
                 </div>
                 <div>
-                  <NavLink to="/connect">Əlaqə</NavLink>
+                  <NavLink to="/connect">{t("Əlaqə")}</NavLink>
                 </div>
               </div>
             </div>
             <div className="col-span-1">
               <div>
-                <p className="text-[22px] font-semibold">XİDMƏTLƏR</p>
+                <p className="text-[22px] font-semibold">{t("XİDMƏTLƏR")}</p>
               </div>
               <div className="text-[16px] font-normal leading-[31px] pt-4">
                 <div>
-                  <NavLink to="/services/veb-saytlara-texniki-destek">
-                    Veb Saytlara Texniki Dəstək
+                  <NavLink to="/services/h4zRjd7HVIWjymGEnhvf19Eh">
+                  {t("Web Səhifələrin Hazirlanması")}
+                    
                   </NavLink>
                 </div>
                 <div>
-                  <NavLink to="/services/web-sehifelerin-hazirlanmasi">
-                    Web Səhifələrin Hazirlanması
+                  <NavLink to="/services/BGIafLPnDXq2gk4MmBT8G3xS">
+                    {t("Veb Saytlara Texniki Dəstək")}
                   </NavLink>
                 </div>
                 <div>
-                  <NavLink to="/services/korporativ-mail-xidmeti">
-                    Korporativ mail xidməti
+                  <NavLink to="/services/ecvcQaU0p4oe4ylrmZQEwhEH">
+                  {t("Korporativ mail xidməti")}
+                   
                   </NavLink>
                 </div>
                 <div>
-                  <NavLink to="/services/online-odeme-sistemi-inteqrasiyasi">
-                    Online ödəmə sistemi inteqrasiyası
+                  <NavLink to="/services/auqzvDFfTWcQVCQix1G2xgVL">
+                  {t("Online ödəmə sistemi inteqrasiyası")}
                   </NavLink>
                 </div>
               </div>
@@ -84,7 +86,7 @@ function Footer() {
             </div>
             <div className="col-span-1">
               <div>
-                <p className="text-[22px] font-semibold">ƏLAQƏ</p>
+                <p className="text-[22px] font-semibold">{t("ƏLAQƏ")} </p>
               </div>
               <div className="text-[16px] font-normal leading-[31px] pt-4">
                 <div>{footerData[key].address}</div>

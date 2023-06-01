@@ -6,7 +6,7 @@ import {useDispatch,useSelector} from 'react-redux'
 import { fetchServices } from "../../store/services/serviceActions";
 
 function Services() {
-  const {i18n } = useTranslation();
+  const {i18n,t} = useTranslation();
 // Redux
   const dispatch = useDispatch();
   const serviceRedux = useSelector(state => state.service.serviceData);
@@ -20,7 +20,7 @@ function Services() {
   return (
     <div>
       <span className="flex justify-center text-[35px] font-bold text-[white] max-md:text-[30px]">
-        Xidmətlərimiz
+     {t("Xidmətlərimiz")}   
       </span>
       <div className="grid grid-cols-4 mt-8 max-w-[90%] gap-4 mx-auto max-xl:grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1">
         {Object.keys(serviceRedux).map((key) => (
@@ -61,8 +61,7 @@ function Services() {
                   </Link>
                   </div>
                   </div>
-
-                // </div>
+                 </div>
               </div>
             </div>
           </Link>

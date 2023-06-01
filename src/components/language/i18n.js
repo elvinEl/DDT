@@ -11,7 +11,7 @@ i18n
     // Backend: {
     //   loadPath: "",
     // },
-    fallbackLng: "az",
+    fallbackLng: "AZ",
     debug: true,
     interpolation: {
       escapeValue: false,

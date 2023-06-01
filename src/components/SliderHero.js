@@ -21,7 +21,7 @@ const SliderHero = () => {
   useEffect(() => {
     let slider = setInterval(() => {
       setIndex(index + 1);
-    }, 93000);
+    }, 6000);
     return () => {
       clearInterval(slider);
     };
@@ -54,7 +54,7 @@ const SliderHero = () => {
                  
 
                   {/* </div> */}
-                <div>
+                <div className="flex justify-center items-center flex-col">
                   <h4>{name}</h4>
                   <p className="title">{title}</p>
                   <p className="text">{quote}</p>

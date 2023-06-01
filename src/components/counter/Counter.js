@@ -1,12 +1,13 @@
 import React,{useState} from 'react'
 import CountUp from "react-countup";
 import ScrollTrigger from "react-scroll-trigger";
+import { getI18n, useTranslation } from "react-i18next";
 
 
 
 function Counter() {
   const [counterStart, setCounterStart] = useState(false);
-
+  const {t} = useTranslation()
   return (
     <>
      <ScrollTrigger
@@ -26,9 +27,9 @@ function Counter() {
               </div>
 
               <div className='flex flex-col'>
-              <p className="text-[32px] max-md:text-[24px] max-lg:text-[28px] text-center"> Hazırlanmış sayt</p>
+              <p className="text-[32px] max-md:text-[24px] max-lg:text-[28px] text-center">{t("Hazırlanmış sayt")} </p>
                 <span className='text-center max-lg:text-[16px]'>
-                Biznesinə dəyər verən, onun hər şeyin ən yaxşısına layiq olduğunu düşünən 300-dən çox sahibkarla çalışırıq
+              {t("Biznesinə dəyər verən, onun hər şeyin ən yaxşısına layiq olduğunu düşünən 300-dən çox sahibkarla çalışırıq")}  
                 </span>
               </div>
             </div>
@@ -41,9 +42,10 @@ function Counter() {
                 +
               </div>
               <div className='flex flex-col'>
-              <p className="text-[32px] max-md:text-[24px] max-lg:text-[28px] text-center">Əməkdaş</p>
+              <p className="text-[32px] max-md:text-[24px] max-lg:text-[28px] text-center">{t("Əməkdaş")} </p>
                 <span className='text-center max-lg:text-[16px]'>
-                Komandamız mümkün olan ən yüksək nəticəni əldə etmək üçün təcrübə və biliklərini layihələrdə tətbiq edirlər
+                  {t("Komandamız mümkün olan ən yüksək nəticəni əldə etmək üçün təcrübə və biliklərini layihələrdə tətbiq edirlər")}
+                
                 </span>
               </div>
               
@@ -57,9 +59,10 @@ function Counter() {
                 +
               </div>
               <div className='flex flex-col'>
-              <p className="text-[32px] max-md:text-[24px] max-lg:text-[28px] text-center">İllik Təcrübə</p>
+              <p className="text-[32px] max-md:text-[24px] max-lg:text-[28px] text-center">{t("İllik Təcrübə")} </p>
                 <span className='text-center max-lg:text-[16px]'>
-                10 ildir ki, bütün fokusumuzu cəmləyərək yalnız veb texnologiyalar sahəsində ixtisaslaşmışıq
+                  {t("10 ildir ki, bütün fokusumuzu cəmləyərək yalnız veb texnologiyalar sahəsində ixtisaslaşmışıq")}
+                
                 </span>
               </div>
             </div>

@@ -82,3 +82,56 @@ nav>a.active {
 	border-bottom: 3px solid #757575;
 	outline: none;
   }
+
+
+
+
+
+
+
+
+  .select-box {
+	position: relative;
+	display: inline-block;
+  }
+  
+  .custom-selected {
+	cursor: pointer;
+  }
+  
+  .dropdown-content {
+	position: absolute;
+	top: 100%;
+	right: 0;
+	left: 0;
+	display: none;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	z-index: 1;
+	border-radius: 8px;
+  }
+  
+  .dropdown-content .option {
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+	border-radius: 8px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  }
+  
+  .dropdown-content .option:hover {
+	background-color: #f2f2f2;
+	color:blue;
+	transition: 500ms;
+  }
+  
+  .select-box.open .dropdown-content {
+	display: block;
+
+  }
+  .selected-item{
+	gap: 0.5rem;
+	
+  }
