@@ -32,10 +32,3 @@ body{
     transform: translate(-50%,-50%);
     color: white;
   }
-  .bg-image{
-    background-image: url(../public/assets/about/a.svg);
-    height: 100%;
-    width: 100%;
-    background-repeat: no-repeat;
-    background-position: center right;
-  }

@@ -19,7 +19,7 @@ export const fetchServicesById = createAsyncThunk(
   async (payload) => {
     const baseUrl = process.env.REACT_APP_BASE_URL;
     const response = await axios.get(
-      `${baseUrl}/services/${payload.dataS.general_key}`,
+      `${baseUrl}/services/${payload.general_key}`,
       {
         headers: {
           language: payload.language,

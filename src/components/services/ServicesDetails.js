@@ -16,10 +16,8 @@ function ServicesDetails() {
   console.log(serviceReduxDetail);
 
   useEffect(() => {
-    let dataS =
-      serviceR && serviceR.find((obj) => obj.general_key == general_key);
     const language = i18n.language;
-    dispatch(fetchServicesById({ dataS, language }));
+    dispatch(fetchServicesById({ general_key, language }));
   }, [dispatch, general_key, i18n.language]);
 
   return (

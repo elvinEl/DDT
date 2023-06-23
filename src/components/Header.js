@@ -8,6 +8,7 @@ import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import {BsChevronCompactDown} from 'react-icons/bs'
 function Header() {
+  
   // ---------------SELECT LANGUAGE---------------
   const [isOpen, setIsOpen] = useState(false);
   const options = ["AZ", "EN", "RU"];
@@ -48,11 +49,6 @@ function Header() {
     }
   };
   window.addEventListener("scroll", changeBackground);
-  //
-  // const { t, i18n } = useTranslation();
-  // const changeSelect = (option) => {
-  //   i18n.changeLanguage(option.target.value);
-  // };
 
   const clickHandle = (e) => {
     showNavbar(!showNavbar);
@@ -100,16 +96,7 @@ function Header() {
             <button className="nav-btn nav-close-btn" onClick={showNavbar}>
               <FaTimes />
             </button>
-
-            {/* <select
-              className="select-option text-white"
-              value={i18n.language}
-              onChange={changeSelect}
-            >
-              <option value="az">Az</option>
-              <option value="en">En</option>
-              <option value="ru">Ru</option>
-            </select> */}
+          
           </nav>
           <div>
           <div
