@@ -10,6 +10,7 @@ function Services() {
   // Redux
   const dispatch = useDispatch();
   const serviceRedux = useSelector((state) => state.service.serviceData);
+  console.log(serviceRedux);
   useEffect(() => {
     const language = i18n.language;
     dispatch(fetchServices({ language }));

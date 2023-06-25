@@ -1,7 +1,6 @@
 import React from "react";
 import AbautFeature from "../components/about/AbautFeature";
 import AboutServices from "../components/about/AboutServices";
-import SetAbout from "../components/about/SetAbout";
 import { Helmet } from "react-helmet";
 import AboutCompany from "../components/about/AboutCompany";
 
@@ -14,8 +13,7 @@ function About() {
 
       <AboutCompany />
 
-      <div className="mt-12  overflow-auto">
-        <SetAbout />
+      <div className="mt-12  overflow-hidden">
         <AbautFeature />
         <AboutServices />
       </div>

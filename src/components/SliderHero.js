@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "../styles/slider.css";
-import data from "../data/data";
 import { BiLeftArrow } from "react-icons/bi";
 import { BiRightArrow } from "react-icons/bi";
 import axios from "axios";

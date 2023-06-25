@@ -7,6 +7,7 @@ import partnersReducer from "./partners/partnersSlice";
 import contactReducer from "./contact/contactSlice";
 import aboutReducer from "./about/aboutSlice";
 import featureReducer from "./feature/featureSlice";
+import whyUsReducer from "./about/whyUsSlice";
 
 export default configureStore({
   reducer: {
@@ -18,5 +19,6 @@ export default configureStore({
     contact: contactReducer,
     about: aboutReducer,
     feature: featureReducer,
+    whyUs: whyUsReducer,
   },
 });
