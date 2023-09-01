@@ -37,6 +37,7 @@
     "react-tsparticles": "^2.9.3",
     "react-video-tag": "^0.0.10",
     "react-whatsapp": "^0.3.0",
+    "swiper": "^9.4.1",
     "tsparticles": "^2.9.3",
     "web-vitals": "^2.1.4"
   },

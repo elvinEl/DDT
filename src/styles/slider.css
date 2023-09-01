@@ -7,18 +7,6 @@ h4 {
   line-height: 1.25;
   margin-bottom: 0.75rem;
 }
-/* .section {
-  width: 90vw;
-  margin: 5rem auto;
-  max-width: 1170px;
-} */
-
-
-@media screen and (min-width: 992px) {
-  .section {
-    /* width: 95vw; */
-  }
-}
 
 .icon {
   font-size: 3rem;
@@ -63,6 +51,7 @@ article.nextSlide {
   /* max-width: 150px; */
   max-width: 100%;
   object-fit: cover;
+  height: 100%;
 }
 
 article h4 {
@@ -162,6 +151,30 @@ article h4 {
   /* top: 150px; */
   transform: scale(3);
   transition: transform 0.8s;
+}
+
+@media screen and (max-width:768px) {
+  .section-center{
+    height:600px ;
+  }
+  .prev{
+    left: 30px;
+    bottom: 20px;
+    height: 2rem;
+    width: 2rem;
+  }
+  .next{
+    right: 30px;
+    bottom: 20px;
+    height: 2rem;
+    width: 2rem;
+  }
+  .text{
+    line-height: 1.5;
+    text-align: start;
+    padding: 0 15px;
+
+  }
 }
 /* 
 @media screen and (max-width: 1536px) {

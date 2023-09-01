@@ -23,7 +23,7 @@ export const fetchPortfolioById = createAsyncThunk(
   async (payload) => {
     const baseUrl = process.env.REACT_APP_BASE_URL;
     const response = await axios.get(
-      `${baseUrl}/portfolios/${payload.dataPort.general_key}`,
+      `${baseUrl}/portfolios/${payload.general_key}`,
       {
         headers:{
           language:payload.language

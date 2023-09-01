@@ -12,8 +12,8 @@ const SliderHero = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(`${baseUrl}/sliders`);
-       console.log(response.data[0].description);
-        setPeople(response.data);
+        console.log(response.data.data);
+        setPeople(response.data.data);
       } catch (error) {
         console.error(error, "Error");
       }
@@ -34,7 +34,7 @@ const SliderHero = () => {
   useEffect(() => {
     let slider = setInterval(() => {
       setIndex(index + 1);
-    }, 6000);
+    }, 60000);
     return () => {
       clearInterval(slider);
     };
@@ -43,7 +43,7 @@ const SliderHero = () => {
   return (
     <section className="section">
       <div className="section-center">
-        {people.map((item, indexPeople) => {
+        {people && people.map((item, indexPeople) => {
           const { id, image, name, title, description } = item;
           let position = "nextSlide";
           if (indexPeople === index) {
@@ -57,17 +57,20 @@ const SliderHero = () => {
           }
           return (
             <article className={position} key={id}>
-              <div className="hero-box ">
-                {/* <div className=""> */}
-                <div className="flex justify-center items-center">
+              <div className="grid grid-cols-2 max-md:grid-cols-1 max-md:gap-4">
+         
+                <div className="flex justify-center items-center max-md:h-[300px] max-md:my-8" data-aos="fade-right"
+     data-aos-offset="300"
+     data-aos-easing="ease-in-sine">
                   <div className="circle-bg flex justify-center items-center"></div>
                   <img src={image} alt={name} className="person-img" />
                 </div>
 
-                {/* </div> */}
-                <div className="flex justify-center items-center flex-col">
+                <div className="flex justify-center items-center flex-col" data-aos="fade-left"
+     data-aos-offset="300"
+     data-aos-easing="ease-in-sine">
                   <p className="title">{title}</p>
-                  <p className="text" dangerouslySetInnerHTML={{__html:description}}></p>
+                  <p className="text max-md:line-clamp-5" dangerouslySetInnerHTML={{__html:description}}></p>
                 </div>
               </div>
             </article>

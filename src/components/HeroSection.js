@@ -9,7 +9,24 @@ function HeroSection() {
       <div className="pt-4">
         <SliderHero />
       </div>
-      <div className="mt-4" data-aos="fade-up" data-aos-duration="2000">
+      <div class="wrapper-a">
+      <div><span class="dot"></span></div>
+      <div><span class="dot"></span></div>
+      <div><span class="dot"></span></div>
+      <div><span class="dot"></span></div>
+      <div><span class="dot"></span></div>
+      <div><span class="dot"></span></div>
+      <div><span class="dot"></span></div>
+      <div><span class="dot"></span></div>
+      <div><span class="dot"></span></div>
+      <div><span class="dot"></span></div>
+      <div><span class="dot"></span></div>
+      <div><span class="dot"></span></div>
+      <div><span class="dot"></span></div>
+      <div><span class="dot"></span></div>
+      <div><span class="dot"></span></div>
+    </div>
+      <div className="py-4" data-aos="fade-up" data-aos-duration="2000">
         <Services />
       </div>
     </div>

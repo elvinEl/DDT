@@ -17,12 +17,14 @@ import ServicesDetails from "./components/services/ServicesDetails";
 import RootLayout from "./layouts/RootLayout";
 import PortfolioLayout from "./layouts/PortfolioLayout";
 import ServicesLayout from "./layouts/ServicesLayout";
+import AboutTeams from "./components/about/AboutTeams";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
       <Route index element={<Home />} />
       <Route path="about" element={<About />} />
+      <Route path="aboutteams" element={<AboutTeams />} />
       <Route path="services" element={<ServicesLayout />}>
         <Route path=":general_key" element={<ServicesDetails />} />
       </Route>
@@ -36,7 +38,6 @@ const router = createBrowserRouter(
 );
 
 function App() {
-
   return (
     <>
       <RouterProvider router={router} />

@@ -8,14 +8,14 @@ import { BsFacebook } from "react-icons/bs";
 import { BsInstagram } from "react-icons/bs";
 import { BsLinkedin } from "react-icons/bs";
 import { BsYoutube } from "react-icons/bs";
-import "../styles/footer.css"
+import "../styles/footer.css";
 function Footer() {
   const dispatch = useDispatch();
   const { t, i18n } = useTranslation();
   const contactRedux = useSelector((state) => state.contact.contactData);
 
   const serviceRedux = useSelector((state) => state.service.serviceData);
-
+  const serviceData = serviceRedux && serviceRedux.data;
   useEffect(() => {
     const language = i18n.language;
     dispatch(fetchServices({ language }));
@@ -26,9 +26,9 @@ function Footer() {
     <div className="bg-[#4C525E]">
       <div>
         {Object.keys(contactRedux).map((key) => (
-          <div className="grid grid-cols-4 gap-4 max-w-[90%] mx-auto pt-8 pb-20 text-white ">
+          <div className="grid grid-cols-4 gap-4 max-w-[90%] mx-auto pt-8 pb-20 text-white max-xl:grid-cols-3 max-lg:grid-cols-2 max-md:pb-4 max-md:pt-4 max-md:grid-cols-1">
             <div className="col-span-1">
-              <div >
+              <div>
                 <p className="text-[22px] font-semibold">
                   Sosial Şəbəkələrimiz
                 </p>
@@ -97,11 +97,12 @@ function Footer() {
               </div>
               <div className="text-[16px] font-normal leading-[31px] pt-4">
                 <div className="flex flex-col">
-                  {Object.keys(serviceRedux).map((key) => (
-                    <Link to={`services/${serviceRedux[key].general_key}`}>
-                      {serviceRedux[key].title}
-                    </Link>
-                  ))}
+                  {serviceData &&
+                    Object.keys(serviceData).map((key) => (
+                      <Link to={`services/${serviceData[key].general_key}`}>
+                        {serviceData[key].title}
+                      </Link>
+                    ))}
                 </div>
               </div>
             </div>

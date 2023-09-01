@@ -6,7 +6,7 @@ import AboutCompany from "../components/about/AboutCompany";
 
 function About() {
   return (
-    <div className="max-w-[90%] mx-auto mb-12 mt-24 overflow-x-hidden">
+    <div className="max-w-[90%] mx-auto mb-12 mt-24 overflow-x-hidden max-md:max-w-[95%]">
       <Helmet>
         <title>Haqqımızda</title>
       </Helmet>

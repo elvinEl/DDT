@@ -7,8 +7,8 @@ import { fetchPortfolioById } from "../../store/portfolio/portfolioActions";
 function PortfolioDetails() {
   const { i18n } = useTranslation();
   const { general_key } = useParams();
-  const baseUrl = process.env.REACT_APP_BASE_URL;
   const portfolioRedux = useSelector((state) => state.portfolio.portfolioData);
+  console.log(portfolioRedux);
   const dispatch = useDispatch();
   const portfolioReduxDetail = useSelector(
     (state) => state.portfolioDetail.portfolioDataDetail
@@ -16,23 +16,51 @@ function PortfolioDetails() {
   console.log(portfolioReduxDetail);
 
   useEffect(() => {
-    let dataPort =
-      portfolioRedux &&
-      portfolioRedux.find((item) => item.general_key == general_key);
     const language = i18n.language;
-    dispatch(fetchPortfolioById({ dataPort, language }));
+    dispatch(fetchPortfolioById({ general_key, language }));
   }, [dispatch, general_key, i18n.language]);
 
   return (
-    <div className="mt-24 mb-[1.1rem]">
-      <p className="text-white">
-        {portfolioReduxDetail.content && portfolioReduxDetail.content.title}
+    <div className="mt-24 mb-[1.1rem] max-w-[85%] mx-auto max-md:max-w-[95%] max-lg:max-w-[90%]">
+      <p className="text-white font-bold text-[58px] max-md:text-[32px]">
+        {portfolioReduxDetail.data && portfolioReduxDetail.data.title}
       </p>
-      <div className="w-[40%]">
+
+      <div className="grid grid-cols-3 gap-4 text-white mt-12 max-lg:grid-cols-1 max-md:mt-4">
+        <div className="col-span-1">
+          <p className="mb-4">
+            {portfolioReduxDetail.data &&
+              portfolioReduxDetail.data.publish_date}
+          </p>
+          <a
+            className="text-blue-400 np-underline hover:underline"
+            target="_blank"
+            href={portfolioReduxDetail.data && portfolioReduxDetail.data.url}
+          >
+            {portfolioReduxDetail.data && portfolioReduxDetail.data.url_name}
+          </a>
+        </div>
+        <div className="col-span-2 text-[20px] max-md:text-[16px]">
+          <p
+            dangerouslySetInnerHTML={{
+              __html:
+                portfolioReduxDetail.data &&
+                portfolioReduxDetail.data.description,
+            }}
+          ></p>
+        </div>
+      </div>
+      <div className="my-8 max-md:h-[280px] max-w-[90%] mx-auto max-lg:max-w-full">
         <img
-          src={
-            portfolioReduxDetail.content && portfolioReduxDetail.content.image
-          }
+          className="w-full h-full rounded-[20px]"
+          src={portfolioReduxDetail.data && portfolioReduxDetail.data.image}
+          alt=""
+        />
+      </div>
+      <div className="my-8 max-md:h-[280px] max-w-[90%] mx-auto max-lg:max-w-full">
+        <img
+          className="w-full h-full rounded-[20px]"
+          src={portfolioReduxDetail.data && portfolioReduxDetail.data.image2}
           alt=""
         />
       </div>

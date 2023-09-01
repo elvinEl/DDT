@@ -6,7 +6,7 @@ function AboutCompany() {
   const { t, i18n } = useTranslation();
   const dispatch = useDispatch();
   const aboutRedux = useSelector((state) => state.about.aboutData);
-
+console.log(aboutRedux);
   useEffect(() => {
     const language = i18n.language;
     dispatch(fetchAbout({ language }));
@@ -15,7 +15,7 @@ function AboutCompany() {
     <div>
       {Object.keys(aboutRedux).map((key) => (
         <>
-          <div className="pb-12 grid grid-cols-2 pt-8 max-lg:flex max-lg:justify-center max-lg:items-center max-lg:flex-col text-white">
+          <div className="py-12 grid grid-cols-2 gap-8 max-lg:flex max-lg:justify-center max-lg:items-center max-lg:flex-col text-white">
             <div className="col-span-1 max-lg:w-full max-lg:place-content-center ">
               <p
                 data-aos="fade-up"
@@ -27,10 +27,10 @@ function AboutCompany() {
                 {aboutRedux[key].slogan}
               </p>
 
-              <div className="mt-8">
+              <div className="mt-8 max-lg:flex max-lg:justify-center">
                 <img
                   className="max-w-[100%] rounded-[24px]"
-                  src={aboutRedux[key].image1}
+                  src={aboutRedux[key].image2}
                   alt=""
                 />
               </div>
@@ -40,7 +40,7 @@ function AboutCompany() {
               <div className="flex justify-end">
                 <img
                   className="rounded-[24px] min-w-[75%]"
-                  src={aboutRedux[key].image2}
+                  src={aboutRedux[key].image1}
                   alt=""
                 />
               </div>
