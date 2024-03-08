@@ -1,137 +1,137 @@
-
 :root {
-	--primaryColor: #6897F1;
-	--secondaryColor: black;
-	--textColor: white;
+  --primaryColor: #6897f1;
+  --secondaryColor: black;
+  --textColor: white;
 }
 
 .container {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	height: 80x;
-	color: var(--secondaryColor);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80x;
+  color: var(--secondaryColor);
 }
 
 nav a {
-    gap: 1rem;
-	color: white;
-	text-decoration: none;
+  gap: 1rem;
+  color: white;
+  text-decoration: none;
 }
 
-
-
 .container .nav-btn {
-	padding: 2px;
-	cursor: pointer;
-	background: transparent;
-	border: none;
-	outline: none;
-	color:black;
-	visibility: hidden;
-	opacity: 0;
-	font-size: 1.8rem;
+  padding: 2px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: black;
+  visibility: hidden;
+  opacity: 0;
+  font-size: 1.8rem;
 }
 
 .container div,
 nav {
-	display: flex;
-	align-items: center;
+  display: flex;
+  /* align-items: center; */
+}
+.hidden-class {
+  display: none !important;
+}
+.hidden-down {
+  display: block !important;
 }
 
 @media only screen and (max-width: 768px) {
-	.container .nav-btn {
-		visibility: visible;
-		opacity: 1;
-	}
+  .container .nav-btn {
+    visibility: visible;
+    opacity: 1;
+  }
+  .hidden-class {
+    display: block !important;
+  }
+  .hidden-down {
+    display: none !important;
+  }
 
-	.container nav {
-		position: fixed;
-		top: 0;
-		left: 0;
-		height: 100%;
-		width: 100%;
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-		justify-content: center;
-		gap: 2rem;
-		padding-left: 2rem;
-		background-color: var(--primaryColor);
-		transition: 0.5s;
-		transform: translateX(100vh);
-	}
+  .container nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2rem;
+    padding-left: 2rem;
+    background-color: var(--primaryColor);
+    transition: 0.5s;
+    transform: translateX(100vh);
+  }
 
-	.container .responsive {
-		transform: none;
-	}
+  .container .responsive {
+    transform: none;
+  }
 
-	nav .nav-close-btn {
-		position: absolute;
-		top: 2rem;
-		right: 2rem;
-	}
+  nav .nav-close-btn {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+  }
 
-	nav a {
-		font-size: 1.5rem;
-		color: white;
-	}
+  nav a {
+    font-size: 1.5rem;
+    color: white;
+  }
 }
 
-nav>a.active {
-	border-bottom: 3px solid #757575;
-	outline: none;
-  }
+nav > a.active {
+  border-bottom: 3px solid #757575;
+  outline: none;
+}
 
+.select-box {
+  position: relative;
+  display: inline-block;
+}
 
+.custom-selected {
+  cursor: pointer;
+}
 
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  display: none;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  border-radius: 8px;
+}
 
+.dropdown-content .option {
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.dropdown-content .option:hover {
+  background-color: #f2f2f2;
+  color: blue;
+  transition: 500ms;
+}
 
-
-
-  .select-box {
-	position: relative;
-	display: inline-block;
-  }
-  
-  .custom-selected {
-	cursor: pointer;
-  }
-  
-  .dropdown-content {
-	position: absolute;
-	top: 100%;
-	right: 0;
-	left: 0;
-	display: none;
-	background-color: #fff;
-	border: 1px solid #ccc;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-	z-index: 1;
-	border-radius: 8px;
-  }
-  
-  .dropdown-content .option {
-	cursor: pointer;
-	transition: background-color 0.3s ease;
-	border-radius: 8px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-  }
-  
-  .dropdown-content .option:hover {
-	background-color: #f2f2f2;
-	color:blue;
-	transition: 500ms;
-  }
-  
-  .select-box.open .dropdown-content {
-	display: block;
-
-  }
-  .selected-item{
-	gap: 0.5rem;
-	
-  }
+.select-box.open .dropdown-content {
+  display: block;
+}
+.selected-item {
+  gap: 0.5rem;
+}

@@ -74,11 +74,11 @@ const Partners = () => {
   return (
     <>
       <div
-        className=" max-w-[80%] mx-auto py-12  max-lg:max-w-[90%] max-md:max-w-[95%] "
+        className=" max-w-[80%] mx-auto py-16  max-lg:max-w-[90%] max-md:max-w-[95%] "
         data-aos="fade-up"
         data-aos-duration="2000"
       >
-        <p className="text-white text-center font-bold text-[2.5rem] mb-8 max-md:text-[1.8rem]">
+        <p className="text-white text-center font-bold text-[2.5rem] mb-12 max-md:text-[1.8rem]">
           {t("Partnyorlar")}
         </p>
         <div className="bg-white">

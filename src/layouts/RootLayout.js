@@ -5,6 +5,7 @@ import Footer from '../components/Footer'
 import Whatsapp from '../components/fixedButtons/Whatsapp'
 import ScrollTop from '../components/fixedButtons/ScrollTop'
 import ScrollToTop from '../components/scroll/ScrollToTop'
+import CircularNavigation from '../components/fixedButtons/CircularNavigation'
 
 function RootLayout() {
   return (
@@ -14,6 +15,7 @@ function RootLayout() {
         <main>
             <Outlet/>
             <Whatsapp/>
+            {/* <CircularNavigation/> */}
             <ScrollTop/>
         </main>
         <Footer/>

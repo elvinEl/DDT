@@ -35,11 +35,11 @@ function Connect() {
             <div>
               <div className=" grid grid-cols-3 max-w-[90%] mt-8 gap-4 mx-auto max-lg:grid-cols-2 max-md:grid-cols-1 max-md:max-w-[95%]">
                 {contactRedux && (
-                  <div className="box col-span-1 bg-[#F8F8F8] rounded-[10px] p-6 relative border-[#ebebeb] border-[1px] ">
+                  <div className="box col-span-1 bg-[#383838] rounded-[10px] p-6 relative border-[#ebebeb] border-[1px] ">
                     <div className="icon-box absolute top-[-30px] text-[25px] text-[#4ebcdf]  duration-300 left-[47px] rounded-[50%] p-6 border-[1px] border-[#ebebeb] bg-[#f8f8f8]">
                       <IoMdHeadset />
                     </div>
-                    <div className=" py-7 text-[#283C83]">
+                    <div className=" py-7 text-white">
                       <p className="text-[18px] font-bold">Əlaqə Nömrələri</p>
                       <div className="mt-[1rem]">
                         <div className="text-[18px]">
@@ -53,11 +53,11 @@ function Connect() {
                   </div>
                 )}
 
-                <div className="box col-span-1 relative bg-[#F8F8F8] border-[#ebebeb] border-[1px] rounded-[10px] p-6">
+                <div className="box col-span-1 relative bg-[#383838] border-[#ebebeb] border-[1px] rounded-[10px] p-6">
                   <div className="icon-box absolute top-[-30px] text-[25px] text-[#4ebcdf]  duration-300 left-[47px] rounded-[50%] p-6 border-[1px] border-[#ebebeb] bg-[#f8f8f8]">
                     <BiMessageDetail />
                   </div>
-                  <div className=" py-7 text-[#283C83]">
+                  <div className=" py-7 text-white">
                     <p className="text-[18px] font-bold">E-mail</p>
                     <div className="mt-[1rem]">
                       <a className="text-[18px]" href="mailto:info@allbuy.az">
@@ -67,11 +67,11 @@ function Connect() {
                   </div>
                 </div>
 
-                <div className="box col-span-1 relative bg-[#F8F8F8] border-[#ebebeb] border-[1px] rounded-[10px] p-6">
+                <div className="box col-span-1 relative bg-[#383838] border-[#ebebeb] border-[1px] rounded-[10px] p-6">
                   <div className="icon-box absolute top-[-30px] text-[25px] text-[#4ebcdf]  duration-300 left-[47px] rounded-[50%] p-6 border-[1px] border-[#ebebeb] bg-[#f8f8f8]">
                     <ImLocation />
                   </div>
-                  <div className=" py-7 text-[#283C83]">
+                  <div className=" py-7 text-white">
                     <p className="text-[18px] font-bold">Ünvan</p>
                     <div className="mt-4">
                       <p className="text-[18px]">{contactRedux[key].address}</p>
@@ -83,12 +83,12 @@ function Connect() {
               <div
                 data-aos="fade-up"
                 data-aos-duration="2000"
-                className="my-8 max-w-[90%] mx-auto border"
+                className="my-8 max-w-[90%] mx-auto border max-md:max-w-[95%]"
               >
-                <p className="flex justify-center pt-4 text-[24px] font-bold text-white">
+                <p className="flex justify-center pt-12 text-[24px] font-bold text-white">
                   Bizə Yazın
                 </p>
-                <div className="max-w-[80%] mx-auto grid grid-cols-3 mt-8 max-md:block gap-4 max-md:max-w-[90%] max-lg:max-w-[90%]">
+                <div className="max-w-[80%] mx-auto  my-12 max-md:block gap-4 max-md:max-w-[90%] max-lg:max-w-[90%]">
                   <Form />
                 </div>
               </div>

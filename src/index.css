@@ -3,61 +3,91 @@
 @tailwind utilities;
 
 /* Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
 /* SLIDER */
 @import url("https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css");
 
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Quicksand', sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Quicksand", sans-serif;
 }
-body{
+body {
   background-color: #272727;
 }
 .box:hover .icon-box {
-    background-color: #4ebcdf;
-    color: white;
+  background-color: #4ebcdf;
+  color: white;
+}
+.position_transform {
+  font-size: 20px;
+  font-weight: bold;
+  width: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+.gray {
+  background-attachment: fixed;
+  background-position: center;
+  position: relative;
+  cursor: pointer;
+  transition: 500ms;
+}
+.gray::before {
+  /* background-color: #818181; */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  mix-blend-mode: multiply;
+  transition: 500ms;
+}
+.gray:hover::before {
+  background-color: white;
+}
+.swiper-slide {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+.accordion-component {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .sabir {
+    display: none !important;
   }
-  .position_transform{
-    font-size: 20px;
-    font-weight: bold;
-    width: 50%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    color: white;
-  }
-  .gray{
-    background-attachment: fixed;
-    background-position: center;
-    position: relative;
-    cursor: pointer;
-    transition: 500ms;
-  
-  }
-  .gray::before{
-    /* background-color: #818181; */
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    mix-blend-mode: multiply;
-    transition: 500ms;
-
-  }
-  .gray:hover::before{
-    background-color:white;
-  }
-  .swiper-slide{
+  .accordion {
     display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
+    flex-direction: column;
   }
-  
+  .accordion-component{
+    display: flex !important;
+  }
+}
+@keyframes slideDown {
+  0% {
+    max-height: 0;
+    opacity: 0;
+  }
+  100% {
+    max-height: 1000px; /* Bir değer belirleyin: accordion'ın maksimum yüksekliği */
+    opacity: 1;
+  }
+}
+
+/* Animasyonun süresi, gecikme ve rahatlatma efektini ayarlayın */
+.accordion-content {
+  animation: slideDown 0.5s ease forwards;
+  display: flex;
+  flex-direction: column;
+  max-height: 0;
+  overflow: hidden;
+}

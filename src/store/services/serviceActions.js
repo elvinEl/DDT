@@ -26,6 +26,6 @@ export const fetchServicesById = createAsyncThunk(
         },
       }
     );
-    return response.data;
+    return response.data.data;
   }
 );

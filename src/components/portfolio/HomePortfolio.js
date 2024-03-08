@@ -23,24 +23,24 @@ function HomePortfolio() {
 
   return (
     <>
-      <div className="max-md:mt-8" data-aos="fade-up" data-aos-duration="2000">
+      <div className="max-md:py-16" data-aos="fade-up" data-aos-duration="2000">
         <span className="flex justify-center  text-[35px] font-bold text-[white] max-md:text-[30px]">
           {t("Ən Son Görülən İşlər")}
         </span>
-        <div className="wrapper_p  max-md:grid-cols-1">
+        <div className="wrapper_p  max-md:grid-cols-1 mt-12">
           {slicedPortfolio.map((portfolioItem, index) => (
-            <Link key={index} to={`portfolios/${portfolioItem.general_key}`}>
+            <div key={index} to={`portfolios/${portfolioItem.general_key}`}>
               <div className="card">
                 <img src={portfolioItem.image} alt="" />
                 <div className="info">
                   <p>{portfolioItem.title}</p>
                   <p>{portfolioItem.description}</p>
-                  <a className="btn rounded" href={portfolioItem.url}>
+                  <a className="btn rounded" target="_blank" href={portfolioItem.url}>
                     {t("Veb Sayta Keçid")}
                   </a>
                 </div>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
         <div className="flex justify-center py-12">

@@ -4,10 +4,15 @@ import { useTranslation } from "react-i18next";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchServices } from "../store/services/serviceActions";
 import { fetchContact } from "../store/contact/contactActions";
-import { BsFacebook } from "react-icons/bs";
-import { BsInstagram } from "react-icons/bs";
-import { BsLinkedin } from "react-icons/bs";
-import { BsYoutube } from "react-icons/bs";
+import {
+  BsFacebook,
+  BsYoutube,
+  BsInstagram,
+  BsLinkedin,
+  BsTelephone,
+} from "react-icons/bs";
+import { TfiLocationPin } from "react-icons/tfi";
+import { GoMail } from "react-icons/go";
 import "../styles/footer.css";
 function Footer() {
   const dispatch = useDispatch();
@@ -112,9 +117,25 @@ function Footer() {
                 <p className="text-[22px] font-semibold">{t("ƏLAQƏ")} </p>
               </div>
               <div className="text-[16px] font-normal leading-[31px] pt-4">
-                <div>{contactRedux[key].address}</div>
-                <div>{contactRedux[key].email}</div>
-                <div>{contactRedux[key].phones.split(",")[0]}</div>
+                <div className="flex items-center gap-2">
+                  {" "}
+                  <span className="text-[18px]">
+                    <TfiLocationPin />
+                  </span>{" "}
+                  {contactRedux[key].address}
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-[18px]">
+                    <GoMail />
+                  </span>{" "}
+                  {contactRedux[key].email}
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-[18px]">
+                    <BsTelephone />
+                  </span>{" "}
+                  {contactRedux[key].phones.split(",")[0]}
+                </div>
                 <div></div>
               </div>
             </div>

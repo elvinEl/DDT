@@ -20,7 +20,8 @@ function PortfolioComponent() {
 
   // PAGINATION
   const [noOfElement, setNoOfElement] = useState(2);
-  const slice = portfolioDataDetail && portfolioDataDetail.slice(0, noOfElement);
+  const slice =
+    portfolioDataDetail && portfolioDataDetail.slice(0, noOfElement);
   const loadMore = () => {
     setNoOfElement(noOfElement + noOfElement);
   };
@@ -31,20 +32,25 @@ function PortfolioComponent() {
         Portfolio
       </span>
       <div className="wrapper_p max-md:py-4 max-md:grid-cols-1">
-        {slice && Object.keys(slice).map((key) => (
-          <Link to={`${portfolioDataDetail[key].general_key}`}>
-            <div className="card">
-              <img src={portfolioDataDetail[key].image} alt="" />
-              <div className="info">
-                <p>{portfolioDataDetail[key].title}</p>
-                <p>{portfolioDataDetail[key].description}</p>
-                <a className="btn rounded" href="#">
-                  Veb Sayta Keçid
-                </a>
+        {slice &&
+          Object.keys(slice).map((key) => (
+            <div to={`${portfolioDataDetail[key].general_key}`}>
+              <div className="card">
+                <img src={portfolioDataDetail[key].image} alt="" />
+                <div className="info">
+                  <p>{portfolioDataDetail[key].title}</p>
+                  <p>{portfolioDataDetail[key].description}</p>
+                  <a
+                    className="btn rounded"
+                    target="_blank"
+                    href={portfolioDataDetail[key].url}
+                  >
+                    Veb Sayta Keçid
+                  </a>
+                </div>
               </div>
             </div>
-          </Link>
-        ))}
+          ))}
       </div>
 
       <div className="flex justify-center py-12 max-md:py-4">

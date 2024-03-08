@@ -33,7 +33,7 @@ function AbautFeature() {
               </p>
               <p
                 data-aos="fade-up"
-                className="text-[18px]"
+                className="text-[18px] leading-8"
                 dangerouslySetInnerHTML={{
                   __html: featureData[key].description,
                 }}

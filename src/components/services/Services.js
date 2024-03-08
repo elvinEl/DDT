@@ -27,7 +27,7 @@ function Services() {
         {t("Xidmətlərimiz")}
       </span>
 
-      <div className="grid grid-cols-4 mt-8 max-w-[90%] gap-4 mx-auto max-xl:grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 max-md:max-w-[95%]">
+      <div className="grid grid-cols-4 mt-12 max-w-[90%] gap-4 mx-auto max-xl:grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 max-md:max-w-[95%]">
         {serviceMap &&
           Object.keys(serviceMap).map((key) => (
             <Link to={`services/${serviceMap[key].general_key}`}>
@@ -86,7 +86,7 @@ function Services() {
                     </div>
                   </div> */}
                   <div className="flex  justify-center items-center h-full">
-                    <p className="bg-lime-500 rounded-[12px] px-3 py-2 text-white font-bold">Daha Ətraflı</p>
+                    <p className="bg-[#383838] rounded-[12px] px-3 py-2 text-white font-bold">Daha Ətraflı</p>
                   </div>
                   </div>
                 </div>

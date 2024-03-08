@@ -26,7 +26,7 @@ function HeroSection() {
       <div><span class="dot"></span></div>
       <div><span class="dot"></span></div>
     </div>
-      <div className="py-4" data-aos="fade-up" data-aos-duration="2000">
+      <div className="py-16" data-aos="fade-up" data-aos-duration="2000">
         <Services />
       </div>
     </div>

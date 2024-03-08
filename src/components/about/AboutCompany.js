@@ -48,7 +48,7 @@ console.log(aboutRedux);
           </div>
 
           <div
-            className="text-white text-[18px]"
+            className="text-white text-[18px] leading-8"
             dangerouslySetInnerHTML={{
               __html: aboutRedux[key].description,
             }}
